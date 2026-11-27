@@ -1,0 +1,129 @@
+:root {
+    --purple: #3b2a5c;
+    --teal: #0094b5;
+    --red: #f23a3a;
+    --green: #3b9a22;
+    --orange: #ee7b2d;
+    --sky: #2bb3e0;
+    --ink: #1c1730;
+    --soft: #f4f6fa;
+    --hexrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='24' viewBox='0 0 96 24'%3E%3Cpath d='M6 12 12 2h12l6 10-6 10H12Z' fill='%230094b5'/%3E%3Cpath d='M38 12 44 2h12l6 10-6 10H44Z' fill='%23f23a3a'/%3E%3Cpath d='M70 12 76 2h12l6 10-6 10H76Z' fill='%233b9a22'/%3E%3C/svg%3E");
+    --hex: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+}
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0; min-height: 100vh; display: flex; flex-direction: column;
+    background: #fff; color: var(--ink);
+    font-family: "Lato", sans-serif; font-size: 1.125rem; line-height: 1.65;
+}
+main { flex: 1; width: min(1140px, calc(100% - 32px)); margin: 0 auto; padding: 24px 0 8px; }
+h1, h2, h3 { font-family: "Montserrat", sans-serif; color: var(--purple); line-height: 1.15; margin: 0 0 12px; }
+h1 { font-size: clamp(2rem, 5.2vw, 3.4rem); font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em; }
+h2 { font-size: clamp(1.5rem, 3.4vw, 2.1rem); font-weight: 800; text-transform: uppercase; }
+h3 { font-size: 1.15rem; font-weight: 700; }
+p { margin: 0 0 14px; max-width: 62ch; }
+a { color: var(--teal); }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+.script { font-family: "Mrs Saint Delafield", cursive; font-size: clamp(2.6rem, 7vw, 4rem); line-height: 1; color: var(--purple); margin: 4px 0 2px; }
+.spaced { font: 700 1rem "Montserrat", sans-serif; letter-spacing: 0.3em; text-transform: uppercase; color: var(--purple); margin: 0 0 18px; }
+
+/* ---------- Header ---------- */
+.headerInner {
+    width: min(1140px, calc(100% - 32px)); margin: 0 auto; padding: 10px 0;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px;
+}
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.brand img { display: block; width: 92px; height: 92px; }
+.brandText { display: none; flex-direction: column; font: 800 1.05rem/1.1 "Montserrat", sans-serif; text-transform: uppercase; color: var(--purple); }
+.brandText span { font: 400 1.9rem/1 "Mrs Saint Delafield", cursive; text-transform: none; margin-top: 2px; }
+.menu { display: flex; gap: 8px 30px; }
+.menu a {
+    font: 600 1rem "Montserrat", sans-serif; color: var(--purple); text-decoration: none; text-transform: uppercase;
+    letter-spacing: 0.06em; padding: 4px 0; border-bottom: 3px solid transparent; transition: border-color 0.2s;
+}
+.menu a:hover, .menu a[aria-current="page"] { border-bottom-color: var(--teal); }
+.hexrow { height: 24px; background: var(--hexrow) repeat-x center; }
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block; padding: 12px 26px; border: 2px solid var(--purple); border-radius: 4px;
+    font: 700 0.95rem "Montserrat", sans-serif; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none;
+    cursor: pointer; background: transparent; color: var(--purple); transition: transform 0.2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn.primary { background: var(--purple); color: #fff; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+
+/* ---------- Hero ---------- */
+.hero {
+    position: relative; display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; padding: 24px 0 40px;
+}
+.heroText { position: relative; z-index: 2; }
+.contactLines { display: grid; gap: 4px; margin: 0; font-weight: 700; }
+.contactLines a { color: var(--purple); text-decoration: none; }
+.contactLines a:hover { text-decoration: underline; }
+.checks { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 10px; }
+.checks li { position: relative; padding-left: 32px; }
+.checks li::before { content: ""; position: absolute; left: 0; top: 0.3em; width: 20px; height: 17px; background: var(--teal); clip-path: var(--hex); }
+
+.hexes { container-type: inline-size; position: relative; width: min(100%, 560px); aspect-ratio: 100 / 93; justify-self: center; z-index: 1; }
+.hexes::before { content: ""; position: absolute; inset: -4% -4% -4% -10%; background: url(deco.svg) no-repeat center / contain; z-index: 0; }
+.hex { position: absolute; z-index: 1; width: 39.4cqw; aspect-ratio: 1.1547; clip-path: var(--hex); background-size: cover; background-position: center; transform: scale(0.95); }
+.h1 { left: 0; top: 17.4cqw; background-image: url(image/maya-books.png); background-position: 50% 15%; background-color: var(--teal); }
+.h2 { left: 30.3cqw; top: 0; background-image: url(image/maya-portrait.png); background-position: 50% 5%; background-color: var(--purple); }
+.h3 { left: 30.3cqw; top: 34.9cqw; background: var(--teal); }
+.h4 { left: 60.6cqw; top: 17.4cqw; background: var(--red); }
+.h5 { left: 60.6cqw; top: 52.3cqw; background: var(--green); }
+.badge {
+    position: absolute; border-radius: 50%; display: grid; place-items: center; text-align: center; text-decoration: none; color: #fff;
+    font: 800 3.6cqw/1.15 "Montserrat", sans-serif; text-transform: uppercase; z-index: 3;
+}
+.badge.enrol { left: 3cqw; top: 62cqw; width: 25cqw; height: 25cqw; background: var(--teal); transition: transform 0.2s; }
+.badge.enrol:hover { transform: scale(1.06); }
+.badge.maths { left: 19cqw; top: 72cqw; width: 22cqw; height: 22cqw; background: #333; z-index: 4; font-size: 3.4cqw; }
+
+/* ---------- Packages / steps ---------- */
+section.block { padding: 28px 0 36px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 20px; }
+.card { background: var(--soft); border-radius: 8px; border-top: 10px solid var(--teal); padding: 22px; display: flex; flex-direction: column; }
+.card.c2 { border-top-color: var(--red); }
+.card.c3 { border-top-color: var(--green); }
+.card ul { padding-left: 20px; margin: 0 0 16px; }
+.price { margin-top: auto; font-weight: 700; color: var(--purple); }
+.card .btn { align-self: flex-start; }
+
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+.steps li { counter-increment: step; position: relative; padding-top: 66px; }
+.steps li::before {
+    content: counter(step); position: absolute; top: 0; left: 0; width: 60px; height: 52px; clip-path: var(--hex);
+    display: grid; place-items: center; background: var(--teal); color: #fff; font: 800 1.3rem "Montserrat", sans-serif;
+}
+.steps li:nth-child(2)::before { background: var(--red); }
+.steps li:nth-child(3)::before { background: var(--green); }
+
+/* ---------- About & contact ---------- */
+.twoCol { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: start; }
+.sideHex { width: min(100%, 340px); aspect-ratio: 1.1547; clip-path: var(--hex); background: var(--purple) url(image/maya-portrait.png) 50% 30% / cover; margin: 0 auto 24px; }
+.aside { background: var(--soft); border-radius: 8px; padding: 22px; border-left: 8px solid var(--teal); }
+.aside dl { margin: 0; display: grid; gap: 12px; }
+.aside dt { font: 700 0.95rem "Montserrat", sans-serif; text-transform: uppercase; color: var(--purple); }
+.aside dd { margin: 0; }
+form { display: flex; flex-direction: column; gap: 16px; }
+label { display: flex; flex-direction: column; gap: 4px; font-weight: 700; }
+input, select, textarea { padding: 11px 12px; border: 2px solid var(--purple); border-radius: 4px; background: #fff; font: 400 1rem "Lato", sans-serif; color: var(--ink); }
+form .btn { align-self: flex-start; }
+.formStatus { min-height: 1.6em; margin: 0; }
+
+/* ---------- Footer ---------- */
+footer { margin-top: 24px; }
+.footerInner { background: var(--purple); color: #eee9f7; padding: 18px 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 28px; text-align: center; font-size: 0.95rem; }
+.footerInner a { color: #fff; }
+
+@media (min-width: 720px) { .brandText { display: flex; } }
+@media (min-width: 900px) {
+    .hero { grid-template-columns: 1.05fr 1fr; }
+    .twoCol { grid-template-columns: 1.4fr 1fr; }
+}
+@media (max-width: 560px) { .headerInner { justify-content: center; } .brand img { width: 76px; height: 76px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

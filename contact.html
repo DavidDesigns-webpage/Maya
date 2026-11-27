@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact | Miss Maya Tutoring Services</title>
+	<meta name="description" content="Book an online Maths lesson or ask Miss Maya a question on WhatsApp.">
+	<meta name="author" content="David Designs">
+	<link rel="icon" href="favicon.png" type="image/png">
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700;800&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+	<div class="headerInner">
+		<a class="brand" href="index.html" aria-label="Miss Maya Tutoring Services, home">
+			<img src="logo.svg" alt="">
+			<span class="brandText">Miss Maya<br>Tutoring Services<span>Private tutor</span></span>
+		</a>
+		<nav class="menu" aria-label="Main">
+			<a href="index.html">Home</a>
+			<a href="about.html">About</a>
+			<a href="contact.html" aria-current="page">Contact</a>
+		</nav>
+	</div>
+	<div class="hexrow" aria-hidden="true"></div>
+</header>
+<main>
+	<div class="twoCol">
+		<div>
+			<h1>Book a lesson</h1>
+			<p class="lead">Fill in the form and your message will open in WhatsApp, ready to send to Miss Maya.</p>
+			<form id="contactForm">
+				<label>Your name <input type="text" name="name" autocomplete="name" required></label>
+				<label>Learner's grade <input type="text" name="grade" placeholder="For example, Grade 9"></label>
+				<label>Package
+					<select name="package" id="package">
+						<option value="Not sure yet">Not sure yet</option>
+						<option value="One-on-one sessions" data-key="one-on-one">One-on-one sessions</option>
+						<option value="Group sessions" data-key="group">Group sessions</option>
+						<option value="Test and exam revision" data-key="revision">Test and exam revision</option>
+					</select>
+				</label>
+				<label>Message <textarea name="message" rows="5" required></textarea></label>
+				<button class="btn primary" type="submit">Send on WhatsApp</button>
+				<p class="formStatus" role="status"></p>
+			</form>
+		</div>
+		<aside class="aside" aria-label="Contact details">
+			<dl>
+				<dt>Phone and WhatsApp</dt><dd><a href="tel:+27847969280">+27 84 796 9280</a></dd>
+				<dt>Email</dt><dd><a href="mailto:asimaya4@gmail.com">asimaya4@gmail.com</a></dd>
+				<dt>Based in</dt><dd>Graaf-Reinett, Eastern Cape</dd>
+				<dt>Lessons</dt><dd>Online, for learners wherever they are</dd>
+			</dl>
+		</aside>
+	</div>
+</main>
+<footer>
+	<div class="hexrow" aria-hidden="true"></div>
+	<div class="footerInner">
+		<span>Miss Maya Tutoring Services (Pty) Ltd</span>
+		<span>REG NO: 2023/738765/07</span>
+		<span>Website by © <span id="year"></span> <a href="https://www.daviddesigns.co.za" target="_blank" rel="noopener">David Designs</a></span>
+	</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
